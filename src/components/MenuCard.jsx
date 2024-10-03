@@ -1,44 +1,53 @@
 
 import React from 'react'
 
-const MenuCard = () => {
+const MenuCard = ( {props}) => {
+  // console.log(props)
+
   return (
-    <div>
 
-<div className='card-container'>
-        <div className='card'>
-          <div className='card-body'>
+    props.map( (j)=> {
+      return (
+        <div>
 
-            <span className='card-number card-circle subtle'>
-              1
-            </span>
-
-            <span className='card-author subtle'>
-              Breakfast
-            </span>
-
-            <br></br>
-
-            <h3 >
-              Poha
-            </h3>
-
-            <span className='card-description '>
-              Maharashtrian food
-            </span>
+        <div className='card-container' key={j.id}>
+                <div className='card'>
+                  <div className='card-body'>
+        
+                    <span className='card-number card-circle subtle'>
+                      {j.id}
+                    </span>
+        
+                    <span className='card-author subtle'>
+                      {j.category}
+                    </span>
+        
+                    <br></br>
+        
+                    <h3 >
+                      {j.name}
+                    </h3>
+        
+                    <span className='card-description '>
+                      {j.description}
+                    </span>             
+                  
+                  </div>
             
-          
-          </div>
-      
+                <img src={j.image} height='100' alt='poha' className='card-media'/>
+        
+                </div>
+        
+              </div>
+        
+        
+            </div>
 
-        {/* <img src={image} alt='poha' className='card-media'/> */}
-
-        </div>
-
-      </div>
+      )
+    })
 
 
-    </div>
+   
   )
 }
 
